@@ -1,1 +1,21 @@
 
+import GoogleAuto from "../googleLocationSuggestion";
+
+
+const test = () =>{
+
+return(<>
+ <GoogleAuto
+                      id="job_location"
+                      name="job_location"
+                      label="Job Location*"
+                      onChangeTemp={useCallback((lat, lng, query) => {
+                        formik.setFieldValue("job_location", query);
+                        formik.setFieldValue("latitude", lat);
+                        formik.setFieldValue("longitude", lng);
+                      }, [])}
+                      onBlur={formik.handleBlur}
+                    />
+</>
+)
+}
